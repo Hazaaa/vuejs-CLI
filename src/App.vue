@@ -1,38 +1,44 @@
 <!--Templejt deo komponente-->
 <template>
   <div>
-    <app-header></app-header>
-    <app-ninjas v-bind:ninjas="ninjas"></app-ninjas>
-    <app-footer></app-footer>
+    <show-blogs></show-blogs>
   </div>
 </template>
 
 <script>
-import Header from './primeri/Primer1/Header.vue';
-import Footer from './primeri/Primer1/Footer.vue';
-import Ninjas from './primeri/Primer1/Ninjas.vue';
-
+import addBlog from './primeri/Primer4/addBlog.vue';
+import showBlogs from './primeri/Primer4/showBlogs.vue';
 //objekat koji vraca ova komponenta
 export default {
   components: {
-    'app-header': Header,
-    'app-footer': Footer,
-    'app-ninjas': Ninjas
+    'add-blog':addBlog,
+    'show-blogs':showBlogs
   },
 
   data () {
     return {
-      ninjas: [
-            {name:'Ryu', speciality:'Taijuitsu',show:false},
-            {name:'Naruto', speciality:'Ninjuitsu',show:false},
-            {name:'Sasuke', speciality:'Genjuitsu',show:false},
-            {name:'Rock Lee', speciality:'Taijuitsu',show:false},
-            {name:'Hinata', speciality:'Genjuitsu',show:false}
-        ]
+
     }
+  },
+
+  methods: {
+
   }
 }
 </script>
 
 <style scoped>
+
+#show-blogs {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.single-blog {
+    padding: 20px;
+    margin: 20px 0;
+    box-sizing: border-box;
+    background: #eee;
+}
+
 </style>

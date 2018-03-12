@@ -1,18 +1,32 @@
 <!--Templejt deo komponente-->
 <template>
     <footer>
-        <p>{{ copyright }}</p>
+        <p>{{ copyright }} {{ title }}</p>
     </footer>
 </template>
 
 <script>
+import { bus } from '../../main';
 //objekat koji vraca ova komponenta
 export default {
-  data () {
-    return {
-        copyright: 'Copyright 2018 Vue Stefan'
+    props: {
+        title: {
+            type: String
+        }
+    },
+
+    data () {
+        return {
+            copyright: 'Copyright 2018',
+            title: 'Vue Ninjas'
+        }
+    },
+
+    created() {
+        bus.$on('titleChanged', (data) => {
+            this.title = data;
+        })
     }
-  }
 }
 </script>
 
