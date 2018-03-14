@@ -1,18 +1,23 @@
 <!--Templejt deo komponente-->
 <template>
   <div>
-    <show-blogs></show-blogs>
+    <app-header></app-header>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import addBlog from './primeri/Primer4/addBlog.vue';
 import showBlogs from './primeri/Primer4/showBlogs.vue';
+import listBlogs from './primeri/Primer5/listBlogs.vue';
+import header from './primeri/Primer6/header.vue';
 //objekat koji vraca ova komponenta
 export default {
   components: {
     'add-blog':addBlog,
-    'show-blogs':showBlogs
+    'show-blogs':showBlogs,
+    'list-blogs':listBlogs,
+    'app-header':header
   },
 
   data () {
@@ -28,17 +33,5 @@ export default {
 </script>
 
 <style scoped>
-
-#show-blogs {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.single-blog {
-    padding: 20px;
-    margin: 20px 0;
-    box-sizing: border-box;
-    background: #eee;
-}
 
 </style>
